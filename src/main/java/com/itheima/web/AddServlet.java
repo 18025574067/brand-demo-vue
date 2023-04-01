@@ -17,7 +17,7 @@ public class AddServlet extends HttpServlet {
     private BrandService service = new BrandService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 1. 接收数据
+        // 1. 接收数据, request.getParameter不能接收json的数据
         String brandName = req.getParameter("brandName");
         System.out.println(brandName);
 
