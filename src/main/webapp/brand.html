@@ -61,11 +61,23 @@
             method:"get",
             url:""
         }).then(function(resp){
+            // 获取数据
+            let brands = resp.date;
+            for(let i = 0; i < brands.length; i ++){
+                let brand = brands[i];
+                document.getElementById("brandTable").innerHTML = "<tr align="center">
+                    <td>2</td>
+                    <td>优衣库</td>
+                    <td>优衣库</td>
+                    <td>10</td>
+                    <td>优衣库，服适人生</td>
+                    <td>禁用</td>
+
+                    <td><a href="#">修改</a> <a href="#">删除</a></td>
+                </tr>";
+            }
         })
     }
-
-
-
 </script>
 </body>
 </html>
