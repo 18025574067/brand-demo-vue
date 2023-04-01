@@ -32,11 +32,9 @@
             description: "",
             status: ""
         };
-        // 获取表单数据
-        let brandName = document.getElementById("brandName").value;
-        // 设置数据
-        formData.brandName = brandName;
 
+        // 获取表单数据, 设置数据
+        formData.brandName = document.getElementById("brandName").value;
         formData.companyName = document.getElementById("companyName").value;
         formData.ordered = document.getElementById("ordered").value;
         formData.description = document.getElementById("description").value;
