@@ -19,6 +19,20 @@
     <input type="button" id="btn"  value="提交">
 </form>
 
+<script src="js/axios-0.18.0.js"></script>
 
+<script>
+    // 1. 给按钮绑定单击事件
+    document.getElementById("btn").onclick = function () {
+        // 2. 发送ajax请求
+        axios({
+            method:"post",
+            url:"http://localhost:8080/brand-demo-json/addServlet",
+            data:{brandName:"华为"}
+        }).then(function (resp) {
+
+        })
+    }
+</script>
 </body>
 </html>
