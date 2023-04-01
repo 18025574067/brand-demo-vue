@@ -33,15 +33,28 @@
             status: ""
         };
         // 获取表单数据
-        document.getElementById()
+        let brandName = document.getElementById("brandName").value;
+        // 设置数据
+        formData.brandName = brandName;
 
+        formData.companyName = document.getElementById("companyName").value;
+        formData.ordered = document.getElementById("ordered").value;
+        formData.description = document.getElementById("description").value;
 
+        let status = document.getElementsByName("status");
+        for (let i = 0; i < status.length; i++) {
+            if (status[i].checked){
+                formData.status = status[i].value;
+            }
+        }
+
+        console.log(formData);
 
         // 2. 发送ajax请求
         axios({
             method:"post",
             url:"http://localhost:8080/brand-demo-json/addServlet",
-            data:{brandName:"华为"}
+            data:formData
         }).then(function (resp) {
             // 判断响应数据是否为success
             if (resp.data == "success"){
