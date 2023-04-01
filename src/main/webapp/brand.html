@@ -59,23 +59,36 @@
         // 2. 发送ajax请求
         axios({
             method:"get",
-            url:""
+            url:"http://localhost:8080/brand-demo-json/selectAllServlet"
         }).then(function(resp){
-            // 获取数据
+            // 3. 获取数据
             let brands = resp.data;
+            let tableData = "<tr>\n" +
+                "        <th>序号</th>\n" +
+                "        <th>品牌名称</th>\n" +
+                "        <th>企业名称</th>\n" +
+                "        <th>排序</th>\n" +
+                "        <th>品牌介绍</th>\n" +
+                "        <th>状态</th>\n" +
+                "        <th>操作</th>\n" +
+                "    </tr>";
             for(let i = 0; i < brands.length; i ++){
                 let brand = brands[i];
-                document.getElementById("brandTable").innerHTML = "    <tr align=\"center\">\n" +
-                    "        <td>2</td>\n" +
-                    "        <td>优衣库</td>\n" +
-                    "        <td>优衣库</td>\n" +
-                    "        <td>10</td>\n" +
-                    "        <td>优衣库，服适人生</td>\n" +
-                    "        <td>禁用</td>\n" +
+                tableData += "<tr align=\"center\">\n" +
+                    "        <td>"+(i+1)+"</td>\n" +
+                    "        <td>"+brand.brandName+"</td>\n" +
+                    "        <td>"+brand.companyName+"</td>\n" +
+                    "        <td>"+brand.ordered+"</td>\n" +
+                    "        <td>"+brand.description+"</td>\n" +
+                    "        <td>"+brand.status+"</td>\n" +
                     "\n" +
                     "        <td><a href=\"#\">修改</a> <a href=\"#\">删除</a></td>\n" +
                     "    </tr>";
+
+                // {"brandName":"三只松鼠","companyName":"三只松鼠股份有限公司","description":"好吃不上火","id":1,"ordered":5,"status":0}
             }
+            // 设置表格数据
+            document.getElementById("brandTable").innerHTML = tableData;
         })
     }
 </script>
