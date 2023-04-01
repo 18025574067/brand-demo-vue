@@ -55,26 +55,26 @@
 
 <script>
     // 1. 当页面加载完成后，发送ajax请求
-    windows.onload = function(){
+    window.onload = function(){
         // 2. 发送ajax请求
         axios({
             method:"get",
             url:""
         }).then(function(resp){
             // 获取数据
-            let brands = resp.date;
+            let brands = resp.data;
             for(let i = 0; i < brands.length; i ++){
                 let brand = brands[i];
-                document.getElementById("brandTable").innerHTML = "<tr align="center">
-                    <td>2</td>
-                    <td>优衣库</td>
-                    <td>优衣库</td>
-                    <td>10</td>
-                    <td>优衣库，服适人生</td>
-                    <td>禁用</td>
-
-                    <td><a href="#">修改</a> <a href="#">删除</a></td>
-                </tr>";
+                document.getElementById("brandTable").innerHTML = "    <tr align=\"center\">\n" +
+                    "        <td>2</td>\n" +
+                    "        <td>优衣库</td>\n" +
+                    "        <td>优衣库</td>\n" +
+                    "        <td>10</td>\n" +
+                    "        <td>优衣库，服适人生</td>\n" +
+                    "        <td>禁用</td>\n" +
+                    "\n" +
+                    "        <td><a href=\"#\">修改</a> <a href=\"#\">删除</a></td>\n" +
+                    "    </tr>";
             }
         })
     }
