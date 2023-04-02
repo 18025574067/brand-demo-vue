@@ -27,28 +27,29 @@
 
     new Vue({
         el: "#app",
-        data(){
-            return{
-                brand:{}
+        data() {
+            return {
+                brand: {}
             }
         },
         methods: {
             submitForm() {
                 // 发送ajax请求
                 axios({
-                        method:"post",
-                        url:"http://localhost:8080/brand-demo-vue/addServlet",
-                        data:formData
-                    }).then(function (resp) {
+                    method: "post",
+                    url: "http://localhost:8080/brand-demo-vue/addServlet",
+                    data: formData
+                }).then(function (resp) {
                     // 判断响应数据是否为success
-                            if (resp.data == "success"){
-                                location.href = "http://localhost:8080/brand-demo-json/brand.html";
-                            }
-                        })
+                    if (resp.data == "success") {
+                        location.href = "http://localhost:8080/brand-demo-json/brand.html";
+                    }
+                })
             }
         },
-
     })
+
+
     // // 1. 给按钮绑定单击事件
     // document.getElementById("btn").onclick = function () {
     //     // 将表单数据转为JSON
