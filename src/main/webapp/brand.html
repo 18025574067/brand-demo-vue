@@ -23,7 +23,7 @@
         <!--        使用v-for 遍历tr-->
 
         <tr v-for="(brand, i) in brands" align="center">
-            <td>{{i+1}}</td>
+            <td>{{i + 1}}</td>
             <td>{{brand.brandName}}</td>
             <td>{{brand.companyName}}</td>
             <td>{{brand.ordered}}</td>
@@ -63,9 +63,9 @@
 
     new Vue({
         el: "#app",
-        data(){
-            return{
-                brands:[]
+        data() {
+            return {
+                brands: []
             }
         },
         mounted() {
