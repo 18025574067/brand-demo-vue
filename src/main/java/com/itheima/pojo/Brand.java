@@ -82,9 +82,18 @@ public class Brand {
         return status;
     }
 
+    // 逻辑视图
+    public String getStatusStr(){
+        if (this.status == 1){
+            return "启用";
+        }return "禁用";
+    }
+
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+
 
     @Override
     public String toString() {
