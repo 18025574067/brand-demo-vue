@@ -16,6 +16,7 @@ import java.util.List;
 @WebServlet("/addServlet")
 public class AddServlet extends HttpServlet {
     private BrandService service = new BrandService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1. 接收数据, request.getParameter不能接收json的数据

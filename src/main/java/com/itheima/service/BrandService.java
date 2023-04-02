@@ -14,9 +14,10 @@ public class BrandService {
 
     /**
      * 查询所有
+     *
      * @return
      */
-    public List<Brand> selectAll(){
+    public List<Brand> selectAll() {
         //调用BrandMapper.selectAll()
 
         //2. 获取SqlSession
@@ -34,9 +35,10 @@ public class BrandService {
 
     /**
      * 添加
+     *
      * @param brand
      */
-    public void add(Brand brand){
+    public void add(Brand brand) {
 
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
@@ -54,12 +56,12 @@ public class BrandService {
     }
 
 
-
     /**
      * 根据id查询
+     *
      * @return
      */
-    public Brand selectById(int id){
+    public Brand selectById(int id) {
         //调用BrandMapper.selectAll()
 
         //2. 获取SqlSession
@@ -78,9 +80,10 @@ public class BrandService {
 
     /**
      * 修改
+     *
      * @param brand
      */
-    public void update(Brand brand){
+    public void update(Brand brand) {
 
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
