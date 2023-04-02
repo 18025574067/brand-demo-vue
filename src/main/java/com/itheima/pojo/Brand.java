@@ -18,7 +18,6 @@ public class Brand {
     // 状态：0：禁用  1：启用
     private Integer status;
 
-
     public Brand() {
     }
 
